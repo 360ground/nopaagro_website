@@ -23,6 +23,10 @@
 ├── /partners                       Who we supply
 │     · Distributors & wholesalers · Institutional & humanitarian buyers · Farms & feedlots
 │
+├── /news                           News (also: latest two on the home page)
+│     ├── /news/preparing-to-export-ethiopian-coffee
+│     └── /news/fair-pay-for-our-employees
+│
 └── /contact                        Contact & Request a Quote
       · Enquiry form (by product / pack size) · Address, email · Map
 

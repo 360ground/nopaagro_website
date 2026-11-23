@@ -206,6 +206,7 @@ export const nav = [
   { href: "/sourcing", label: "Sourcing" },
   { href: "/quality", label: "Quality" },
   { href: "/partners", label: "Partners" },
+  { href: "/news", label: "News" },
   { href: "/contact", label: "Contact" },
 ];
 

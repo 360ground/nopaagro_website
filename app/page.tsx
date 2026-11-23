@@ -4,6 +4,8 @@ import { ButtonLink, CtaBand, SectionHead } from "@/components/Blocks";
 import { ArrowRight, ArrowUpRight, Check } from "@/components/Icons";
 import BatchCard from "@/components/BatchCard";
 import PartnerLogos from "@/components/PartnerLogos";
+import NewsCard from "@/components/NewsCard";
+import { news } from "@/lib/news";
 import { company, products } from "@/lib/site";
 
 const tiles = [
@@ -269,6 +271,27 @@ export default function Home() {
                 <span className="link-underline">How we work with you</span> <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </article>
+          ))}
+        </div>
+      </section>
+
+      {/* NEWS */}
+      <section className="container-x pb-24 md:pb-32">
+        <div className="flex flex-col gap-6 border-t border-line pt-12 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <p className="eyebrow flex items-center gap-3 text-leaf">
+              <span className="h-px w-8 bg-leaf" aria-hidden="true" />
+              Latest news
+            </p>
+            <h2 className="display mt-5 text-4xl sm:text-5xl">What’s new at Nopa</h2>
+          </div>
+          <ButtonLink href="/news" variant="outline">
+            All news
+          </ButtonLink>
+        </div>
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {news.slice(0, 2).map((n) => (
+            <NewsCard key={n.slug} item={n} />
           ))}
         </div>
       </section>
