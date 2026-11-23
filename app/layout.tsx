@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: `%s | ${company.name}`,
   },
   description:
-    "Nopa Agro Processing S.C. is an Addis Ababa based processor of refined edible oil, maize and sorghum flour, fortified corn-soya blend and compound animal feed.",
+    "Nopa Agro Processing S.C. is a Gambela-based Ethiopian processor of refined edible oil, maize and sorghum flour, fortified corn-soya blend and compound animal feed.",
   openGraph: {
     type: "website",
     siteName: company.name,

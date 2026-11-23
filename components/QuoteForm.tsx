@@ -4,9 +4,9 @@ import { useEffect, useRef, useState } from "react";
 import { company, products } from "@/lib/site";
 import { ArrowUpRight } from "./Icons";
 
-const field =
+export const field =
   "w-full rounded-xl border border-paper/20 bg-paper/5 px-4 py-3.5 text-paper placeholder:text-paper/40 outline-none transition-colors focus:border-sprout focus:bg-paper/10";
-const label = "mb-2 block text-sm text-paper/75";
+export const label = "mb-2 block text-sm text-paper/75";
 
 /**
  * Static-hosting friendly: composes the enquiry into an email to the sales inbox.

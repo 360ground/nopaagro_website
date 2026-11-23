@@ -4,9 +4,9 @@ export const company = {
   short: "Nopa",
   tagline: "Processing Ethiopia’s harvest with quality and care",
   address: {
-    line1: "Bole Sub City, Woreda 03",
-    line2: "House No. New",
-    city: "Addis Ababa",
+    street: "Around Gambela Square",
+    city: "Gambela",
+    region: "Gambela Region",
     country: "Ethiopia",
   },
   email: "info@nopaagri.com",

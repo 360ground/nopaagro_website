@@ -48,11 +48,11 @@ export default function Footer() {
           <h2 className="eyebrow text-sprout">Reach us</h2>
           <address className="mt-5 space-y-3 not-italic text-paper/80">
             <p>
-              {company.address.line1}
+              {company.address.street}
               <br />
-              {company.address.line2}
+              {company.address.city}, {company.address.region}
               <br />
-              {company.address.city}, {company.address.country}
+              {company.address.country}
             </p>
             <a href={`mailto:${company.email}`} className="link-underline block w-fit hover:text-paper">
               {company.email}
@@ -66,7 +66,7 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} {company.legalName}. All rights reserved.
           </p>
-          <p>Addis Ababa, Ethiopia</p>
+          <p>Gambela, Ethiopia</p>
         </div>
       </div>
     </footer>

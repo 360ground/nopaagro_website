@@ -143,7 +143,7 @@ export function CtaBand({
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/contact#quote"
+                href="/contact?type=quote#quote"
                 className="group inline-flex items-center gap-2.5 rounded-full bg-paper px-6 py-3.5 font-medium text-forest transition-colors hover:bg-sprout"
               >
                 Start an enquiry <ArrowUpRight className="h-4 w-4" />

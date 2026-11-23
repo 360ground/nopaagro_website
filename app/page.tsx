@@ -85,7 +85,7 @@ export default function Home() {
             <div>
               <p className="eyebrow flex items-center gap-3 text-leaf">
                 <span className="h-px w-8 bg-leaf" aria-hidden="true" />
-                Food & feed processing · Addis Ababa
+                Food & feed processing · Gambela, Ethiopia
               </p>
               <h1 className="display mt-8 text-[3.1rem] sm:text-7xl xl:text-[6.4rem]">
                 Processing Ethiopia’s harvest <em className="text-leaf" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100' }}>with quality and care.</em>
@@ -97,7 +97,7 @@ export default function Home() {
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <ButtonLink href="/products">Explore our products</ButtonLink>
-                <ButtonLink href="/contact#quote" variant="outline">
+                <ButtonLink href="/contact?type=quote#quote" variant="outline">
                   Request a quote
                 </ButtonLink>
               </div>
@@ -116,7 +116,7 @@ export default function Home() {
               ["Product lines", "Four"],
               ["Cooking oil packs", "1L to 20L"],
               ["Flour & feed sacks", "25 & 50 kg"],
-              ["Head office", "Bole, Addis Ababa"],
+              ["Head office", "Gambela, Ethiopia"],
             ].map(([k, v]) => (
               <div
                 key={k}

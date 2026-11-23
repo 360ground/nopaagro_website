@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/Blocks";
-import QuoteForm from "@/components/QuoteForm";
+import ContactPanel from "@/components/ContactPanel";
 import { Mail, Pin } from "@/components/Icons";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact & request a quote",
-  description: `Contact ${company.legalName} in Bole, Addis Ababa. Email ${company.email} or send a quote request.`,
+  description: `Contact ${company.legalName} in Gambela, Ethiopia. Email ${company.email} or send a quote request.`,
 };
 
-const mapQuery = encodeURIComponent("Bole, Addis Ababa, Ethiopia");
+const mapQuery = encodeURIComponent("Gambela Square, Gambela, Ethiopia");
 
 export default function ContactPage() {
   return (
@@ -19,10 +19,10 @@ export default function ContactPage() {
         crumbs={[{ label: "Contact" }]}
         title={
           <>
-            Let’s talk about <em className="text-leaf">your order.</em>
+            Get in <em className="text-leaf">touch.</em>
           </>
         }
-        intro="Questions, quotations, samples or specifications. Email us or send the form and our sales team will reply."
+        intro="Questions, partnerships, quotations or specifications. Send us a message or request a quote and our team will reply."
       />
 
       <section className="container-x py-16 md:py-24">
@@ -41,9 +41,11 @@ export default function ContactPage() {
               </span>
               <p className="mt-8 text-sm text-ink-soft">Head office</p>
               <address className="mt-1 font-display text-xl not-italic leading-snug">
-                {company.address.line1}, {company.address.line2}
+                {company.address.street}
                 <br />
-                {company.address.city}, {company.address.country}
+                {company.address.city}, {company.address.region}
+                <br />
+                {company.address.country}
               </address>
               <a
                 href={`https://www.google.com/maps/search/?api=1&query=${mapQuery}`}
@@ -57,14 +59,7 @@ export default function ContactPage() {
           </aside>
 
           <div id="quote" className="scroll-mt-32 lg:col-span-8">
-            <div className="rounded-[2rem] bg-forest p-7 text-paper sm:p-10 md:p-12">
-              <p className="eyebrow text-sprout">Request a quote</p>
-              <h2 className="display mt-4 text-4xl sm:text-5xl">Tell us what you need.</h2>
-              <p className="mt-4 max-w-xl text-paper/70">
-                The more detail you share (product, pack size, quantity and delivery location), the faster we can come back with a firm price.
-              </p>
-              <QuoteForm />
-            </div>
+            <ContactPanel />
           </div>
         </div>
       </section>
@@ -72,8 +67,8 @@ export default function ContactPage() {
       <section className="container-x pb-24">
         <div className="overflow-hidden rounded-[2rem] border border-line">
           <iframe
-            title="Map showing Bole, Addis Ababa"
-            src={`https://maps.google.com/maps?q=${mapQuery}&z=13&output=embed`}
+            title="Map showing Gambela, Ethiopia"
+            src={`https://maps.google.com/maps?q=${mapQuery}&z=14&output=embed`}
             className="h-[22rem] w-full grayscale-[0.4] md:h-[28rem]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

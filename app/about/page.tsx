@@ -8,7 +8,7 @@ import { company, products } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Nopa Agro Processing S.C. is an Ethiopian food and feed processor based in Bole, Addis Ababa, making edible oil, flour, fortified blended food and animal feed.",
+    "Nopa Agro Processing S.C. is an Ethiopian food and feed processor based in Gambela, making edible oil, flour, fortified blended food and animal feed.",
 };
 
 const values = [
@@ -51,7 +51,7 @@ export default function AboutPage() {
               <h2 className="display text-4xl sm:text-5xl">Who we are</h2>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
                 <p>
-                  Nopa Agro Processing is a share company headquartered in Bole Sub City, Addis Ababa. We work where farming meets food manufacturing. Oilseeds, maize, sorghum and soya come in from Ethiopian growers and traders, and leave as finished, packed products ready for shops, kitchens, programmes and farms.
+                  Nopa Agro Processing is a share company headquartered in Gambela, the capital of Gambela Region in western Ethiopia, near Gambela Square. We work where farming meets food manufacturing. Oilseeds, maize, sorghum and soya come in from Ethiopian growers and traders, and leave as finished, packed products ready for shops, kitchens, programmes and farms.
                 </p>
                 <p>
                   We make four product lines: refined edible cooking oil, maize and sorghum flour, fortified corn-soya blend, and compound animal and poultry feed. They are made on separate lines. The by-products of our oil and milling work, oilseed cake and bran, go into our animal feed.
@@ -113,13 +113,13 @@ export default function AboutPage() {
             <p className="eyebrow flex items-center gap-3 text-leaf">
               <Pin /> Where we are
             </p>
-            <h2 className="display mt-6 text-4xl sm:text-5xl">Addis Ababa, Ethiopia</h2>
+            <h2 className="display mt-6 text-4xl sm:text-5xl">Gambela, Ethiopia</h2>
             <address className="mt-6 text-lg not-italic leading-relaxed text-ink-soft">
               {company.legalName}
               <br />
-              {company.address.line1}, {company.address.line2}
+              {company.address.street}
               <br />
-              {company.address.city}, {company.address.country}
+              {company.address.city}, {company.address.region}, {company.address.country}
             </address>
             <Link href="/contact" className="group mt-8 inline-flex items-center gap-2 text-leaf">
               <span className="link-underline">Contact details & directions</span>
@@ -154,7 +154,7 @@ function MapSketch() {
       <circle cx="230" cy="150" r="9" fill="#d9a637" />
       <circle cx="230" cy="150" r="3.5" fill="#1b3320" />
       <text x="248" y="134" fill="#f6f3ea" style={{ font: "600 11px var(--font-sans)", letterSpacing: "0.16em" }}>
-        BOLE
+        GAMBELA
       </text>
     </svg>
   );
