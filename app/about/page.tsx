@@ -29,7 +29,7 @@ export default function AboutPage() {
             Rooted in Ethiopian <em className="text-leaf">agriculture.</em>
           </>
         }
-        intro={`${company.legalName} is an agro-manufacturing company. We buy crops from local farmers and manufacture them into food and feed for households, institutions and farms across Ethiopia.`}
+        intro={`Established in ${company.founded}, ${company.legalName} is an agro-manufacturing company. We buy crops from local farmers and manufacture them into food and feed for households, institutions and farms across Ethiopia.`}
       />
 
       <section className="container-x py-20 md:py-28">
@@ -51,7 +51,7 @@ export default function AboutPage() {
               <h2 className="display text-4xl sm:text-5xl">Who we are</h2>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
                 <p>
-                  Nopa Agro Processing is an agro-manufacturing share company headquartered in Gambela, the capital of Gambela Region in western Ethiopia, near Gambela Square. We sit between the farm and the market. We buy maize, sorghum, soya and oilseeds from smallholder farmers and cooperatives, and manufacture them into finished, packed products ready for shops, kitchens, programmes and farms.
+                  Founded in {company.founded}, Nopa Agro Processing is an agro-manufacturing share company headquartered in Gambela, the capital of Gambela Region in western Ethiopia, near Gambela Square. We sit between the farm and the market. We buy maize, sorghum, soya and oilseeds from smallholder farmers and cooperatives, and manufacture them into finished, packed products ready for shops, kitchens, programmes and farms.
                 </p>
                 <p>
                   We make five product lines: refined edible cooking oil, maize and sorghum flour, fortified corn-soya blend, compound animal and poultry feed, and natural honey. The first four are manufactured on separate lines from farmers’ crops, and the by-products of our oil and milling work, oilseed cake and bran, go into our animal feed. Our honey comes from our own honey farm, where we keep the hives ourselves.

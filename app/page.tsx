@@ -4,7 +4,7 @@ import { ButtonLink, CtaBand, SectionHead } from "@/components/Blocks";
 import { ArrowRight, ArrowUpRight, Check } from "@/components/Icons";
 import BatchCard from "@/components/BatchCard";
 import PartnerLogos from "@/components/PartnerLogos";
-import { products } from "@/lib/site";
+import { company, products } from "@/lib/site";
 
 const tiles = [
   { slug: "edible-oil", bg: "bg-forest", text: "text-paper", h: "h-[19rem] sm:h-[26rem]", art: "w-[88%] -translate-y-[52%]" },
@@ -120,7 +120,7 @@ export default function Home() {
         <div className="border-y border-line">
           <dl className="container-x grid grid-cols-2 md:grid-cols-4">
             {[
-              ["What we do", "Agro-manufacturing"],
+              ["Established", String(company.founded)],
               ["Raw materials", "From local farmers"],
               ["Product lines", "Five, incl. honey"],
               ["Head office", "Gambela, Ethiopia"],

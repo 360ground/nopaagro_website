@@ -64,7 +64,7 @@ export default function Footer() {
       <div className="border-t border-line-light">
         <div className="container-x flex flex-col gap-2 py-6 text-sm text-paper/55 md:flex-row md:items-center md:justify-between">
           <p>
-            © {new Date().getFullYear()} {company.legalName}. All rights reserved.
+            © {new Date().getFullYear()} {company.legalName}. Established {company.founded}. All rights reserved.
           </p>
           <p>Gambela, Ethiopia</p>
         </div>

@@ -44,7 +44,9 @@ export default function Header() {
     >
       <div className="hidden border-b border-line md:block">
         <div className="container-x flex h-9 items-center justify-between text-[0.78rem] text-ink-soft">
-          <p>{company.tagline}</p>
+          <p>
+            {company.tagline} · Since {company.founded}
+          </p>
           <a href={`mailto:${company.email}`} className="link-underline hover:text-ink">
             {company.email}
           </a>

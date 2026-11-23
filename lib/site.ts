@@ -3,6 +3,7 @@ export const company = {
   legalName: "Nopa Agro Processing S.C.",
   short: "Nopa",
   tagline: "Processing Ethiopia’s harvest with quality and care",
+  founded: 2019,
   address: {
     street: "Around Gambela Square",
     city: "Gambela",
