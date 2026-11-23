@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Mail, Phone } from "./Icons";
+import { ArrowRight, ArrowUpRight, Mail } from "./Icons";
 import { company } from "@/lib/site";
 
 export function Crumbs({ items }: { items: { href?: string; label: string }[] }) {
@@ -150,9 +150,6 @@ export function CtaBand({
               </Link>
             </div>
             <div className="space-y-2 border-t border-paper/20 pt-6 text-sm">
-              <a href={company.phoneHref} className="flex items-center gap-3 text-paper/85 hover:text-paper">
-                <Phone /> {company.phone}
-              </a>
               <a href={`mailto:${company.email}`} className="flex items-center gap-3 text-paper/85 hover:text-paper">
                 <Mail /> {company.email}
               </a>

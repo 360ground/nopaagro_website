@@ -20,7 +20,7 @@
 │     · Distributors & wholesalers · Institutional & humanitarian buyers · Farms & feedlots
 │
 └── /contact                        Contact & Request a Quote
-      · Enquiry form (by product / pack size) · Address, phone, email · Map
+      · Enquiry form (by product / pack size) · Address, email · Map
 
 Utility: /sitemap.xml · /robots.txt · 404
 ```

@@ -45,14 +45,9 @@ export default function Header() {
       <div className="hidden border-b border-line md:block">
         <div className="container-x flex h-9 items-center justify-between text-[0.78rem] text-ink-soft">
           <p>{company.tagline}</p>
-          <div className="flex items-center gap-6">
-            <a href={company.phoneHref} className="link-underline hover:text-ink">
-              {company.phone}
-            </a>
-            <a href={`mailto:${company.email}`} className="link-underline hover:text-ink">
-              {company.email}
-            </a>
-          </div>
+          <a href={`mailto:${company.email}`} className="link-underline hover:text-ink">
+            {company.email}
+          </a>
         </div>
       </div>
 
@@ -177,9 +172,6 @@ export default function Header() {
             Request a quote <ArrowUpRight />
           </Link>
           <div className="mt-8 space-y-1 text-sm text-ink-soft">
-            <a href={company.phoneHref} className="block">
-              {company.phone}
-            </a>
             <a href={`mailto:${company.email}`} className="block">
               {company.email}
             </a>

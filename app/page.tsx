@@ -3,6 +3,7 @@ import ProductArt from "@/components/ProductArt";
 import { ButtonLink, CtaBand, SectionHead } from "@/components/Blocks";
 import { ArrowRight, ArrowUpRight, Check } from "@/components/Icons";
 import BatchCard from "@/components/BatchCard";
+import PartnerLogos from "@/components/PartnerLogos";
 import { products } from "@/lib/site";
 
 const tiles = [
@@ -227,6 +228,22 @@ export default function Home() {
               </Link>
             </article>
           ))}
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section className="container-x pb-24 md:pb-32">
+        <div className="grid gap-6 border-t border-line pt-12 md:grid-cols-12 md:items-end">
+          <div className="md:col-span-7">
+            <p className="eyebrow flex items-center gap-3 text-leaf">
+              <span className="h-px w-8 bg-leaf" aria-hidden="true" />
+              Our partners
+            </p>
+            <h2 className="display mt-5 text-3xl sm:text-4xl">Working alongside organisations that invest in Ethiopia’s food system.</h2>
+          </div>
+        </div>
+        <div className="reveal mt-10">
+          <PartnerLogos />
         </div>
       </section>
 

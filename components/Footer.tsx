@@ -54,9 +54,6 @@ export default function Footer() {
               <br />
               {company.address.city}, {company.address.country}
             </p>
-            <a href={company.phoneHref} className="link-underline block w-fit hover:text-paper">
-              {company.phone}
-            </a>
             <a href={`mailto:${company.email}`} className="link-underline block w-fit hover:text-paper">
               {company.email}
             </a>

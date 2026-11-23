@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/Blocks";
 import QuoteForm from "@/components/QuoteForm";
-import { Mail, Phone, Pin } from "@/components/Icons";
+import { Mail, Pin } from "@/components/Icons";
 import { company } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact & request a quote",
-  description: `Contact ${company.legalName} in Bole, Addis Ababa. Call ${company.phone} or email ${company.email}.`,
+  description: `Contact ${company.legalName} in Bole, Addis Ababa. Email ${company.email} or send a quote request.`,
 };
 
 const mapQuery = encodeURIComponent("Bole, Addis Ababa, Ethiopia");
@@ -22,19 +22,12 @@ export default function ContactPage() {
             Let’s talk about <em className="text-leaf">your order.</em>
           </>
         }
-        intro="Questions, quotations, samples or specifications. Call us, email us, or send the form and our sales team will reply."
+        intro="Questions, quotations, samples or specifications. Email us or send the form and our sales team will reply."
       />
 
       <section className="container-x py-16 md:py-24">
         <div className="grid gap-12 lg:grid-cols-12">
           <aside className="space-y-4 lg:col-span-4">
-            <a href={company.phoneHref} className="group block rounded-[1.5rem] border border-line bg-bone p-7 transition-colors hover:border-forest">
-              <span className="flex h-11 w-11 items-center justify-center rounded-full bg-leaf text-paper">
-                <Phone className="h-5 w-5" />
-              </span>
-              <p className="mt-8 text-sm text-ink-soft">Call or WhatsApp</p>
-              <p className="mt-1 font-display text-2xl group-hover:text-leaf">{company.phone}</p>
-            </a>
             <a href={`mailto:${company.email}`} className="group block rounded-[1.5rem] border border-line bg-bone p-7 transition-colors hover:border-forest">
               <span className="flex h-11 w-11 items-center justify-center rounded-full bg-leaf text-paper">
                 <Mail className="h-5 w-5" />

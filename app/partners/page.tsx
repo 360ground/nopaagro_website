@@ -3,6 +3,7 @@ import Link from "next/link";
 import { CtaBand, PageHero, SectionHead } from "@/components/Blocks";
 import { ArrowRight } from "@/components/Icons";
 import { products } from "@/lib/site";
+import PartnerLogos from "@/components/PartnerLogos";
 
 export const metadata: Metadata = {
   title: "Who we supply",
@@ -95,6 +96,15 @@ export default function PartnersPage() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="container-x pb-20 md:pb-28">
+        <SectionHead eyebrow="Our partners" title="Organisations we work with.">
+          We are proud to work alongside these partners in building Ethiopia’s food and agriculture sector.
+        </SectionHead>
+        <div className="reveal mt-12">
+          <PartnerLogos />
         </div>
       </section>
 

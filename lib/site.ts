@@ -9,8 +9,6 @@ export const company = {
     city: "Addis Ababa",
     country: "Ethiopia",
   },
-  phone: "+251 91 309 9230",
-  phoneHref: "tel:+251913099230",
   email: "info@nopaagri.com",
   url: "https://nopaagri.com",
 };
@@ -174,4 +172,10 @@ export const nav = [
   { href: "/quality", label: "Quality" },
   { href: "/partners", label: "Partners" },
   { href: "/contact", label: "Contact" },
+];
+
+export const partners = [
+  { name: "USAID", src: "/partners/usaid.svg", width: 512, height: 153, className: "h-14 sm:h-16" },
+  { name: "UK Department for International Development (DFID)", src: "/partners/dfid.svg", width: 300, height: 207, className: "h-16 sm:h-20" },
+  { name: "Mastercard Foundation", src: "/partners/mastercard-foundation.jpg", width: 400, height: 400, className: "h-24 sm:h-28" },
 ];
