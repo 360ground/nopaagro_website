@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Refined edible cooking oil, maize and sorghum flour, fortified corn-soya blend and compound animal and poultry feed from Nopa Agro Processing.",
 };
 
-const tones = ["bg-forest text-paper", "bg-paper-2 text-ink", "bg-sprout text-forest", "bg-maize text-forest"];
+const tones = ["bg-forest text-paper", "bg-paper-2 text-ink", "bg-sprout text-forest", "bg-maize text-forest", "bg-honey text-forest"];
 
 export default function ProductsPage() {
   return (
@@ -24,19 +24,21 @@ export default function ProductsPage() {
             Food and feed, <em className="text-leaf">made in Ethiopia.</em>
           </>
         }
-        intro="Four product lines, each with its own processing line and its own quality checks. Every pack is sealed and batch-coded."
+        intro="Five product lines, manufactured from crops we buy from local farmers and honey from our own farm. Every pack is sealed and batch-coded."
       />
 
       <section className="container-x py-16 md:py-24">
         <div className="grid gap-5 md:grid-cols-2">
-          {products.map((p, i) => (
+          {products.map((p, i) => {
+            const wide = i === products.length - 1 && products.length % 2 === 1;
+            return (
             <Link
               key={p.slug}
               href={`/products/${p.slug}`}
-              className="reveal group flex flex-col overflow-hidden rounded-[1.75rem] border border-line bg-bone"
+              className={`reveal group flex flex-col overflow-hidden rounded-[1.75rem] border border-line bg-bone ${wide ? "md:col-span-2 md:grid md:grid-cols-2" : ""}`}
               style={{ transitionDelay: `${(i % 2) * 90}ms` }}
             >
-              <div className={`relative aspect-[4/3] overflow-hidden ${tones[i]}`}>
+              <div className={`relative aspect-[4/3] overflow-hidden ${tones[i % tones.length]}`}>
                 <span className="absolute left-6 top-5 font-display text-2xl tabular-nums opacity-70">0{i + 1}</span>
                 <span className="eyebrow absolute right-6 top-6 opacity-70">{p.category}</span>
                 <ProductArt kind={p.art} className="absolute inset-x-0 bottom-0 mx-auto w-[80%] transition-transform duration-700 ease-out-soft group-hover:-translate-y-2 group-hover:scale-[1.03]" />
@@ -57,7 +59,8 @@ export default function ProductsPage() {
                 </div>
               </div>
             </Link>
-          ))}
+            );
+          })}
         </div>
       </section>
 

@@ -10,10 +10,12 @@ export const company = {
     country: "Ethiopia",
   },
   email: "info@nopaagri.com",
-  url: "https://nopaagri.com",
+  url: "https://nopaagro.com",
+  // Pin for the head office (central junction / square, Gambela town).
+  geo: { lat: 8.250247, lng: 34.587815 },
 };
 
-export type ArtKind = "oil" | "flour" | "csb" | "feed";
+export type ArtKind = "oil" | "flour" | "csb" | "feed" | "honey";
 
 export type Product = {
   slug: string;
@@ -41,7 +43,7 @@ export const products: Product[] = [
       "Clear, odour-neutral refined oil for the home kitchen, restaurants and food manufacturers.",
     lead: "A clean, light oil that behaves the same way every time, from a one-litre bottle on a kitchen shelf to a twenty-litre jerrycan in a hotel kitchen.",
     body: [
-      "Our cooking oil is refined to remove impurities, free fatty acids, colour and odour. What remains is a pale, neutral oil that lets food taste of itself and holds up to everyday frying, sautéing and baking.",
+      "Our cooking oil is made from oilseeds we buy from local farmers. It is refined to remove impurities, free fatty acids, colour and odour. What remains is a pale, neutral oil that lets food taste of itself and holds up to everyday frying, sautéing and baking.",
       "Every batch is checked before filling, and every container carries a batch code. That means wholesalers and institutional buyers can trace a delivery back to the day it was packed.",
     ],
     packs: [
@@ -75,7 +77,7 @@ export const products: Product[] = [
       "Cleaned, milled maize and sorghum flour in 25kg and 50kg sacks for bakers, millers and food programmes.",
     lead: "Maize and sorghum are staples across Ethiopia. We clean, mill and sack them so that customers get even, dependable flour in every bag.",
     body: [
-      "Grain is cleaned to remove stones, dust and foreign matter before it is milled. The flour is sifted to an even texture, which matters for injera, porridge, bread and the many other foods made from it.",
+      "We buy our maize and sorghum from local farmers and cooperatives. The grain is cleaned to remove stones, dust and foreign matter before it is milled. The flour is sifted to an even texture, which matters for injera, porridge, bread and the many other foods made from it.",
       "We pack in strong 25kg and 50kg sacks. Each sack is stitched, labelled and batch-coded, ready for warehouses, bakeries and distribution programmes.",
     ],
     packs: [
@@ -107,7 +109,7 @@ export const products: Product[] = [
       "CSB / Faffa-style Super Cereal: a pre-cooked blend of maize and soya, fortified with vitamins and minerals.",
     lead: "A pre-cooked blend of maize and soya, fortified with vitamins and minerals. It is made for porridge that feeds children, mothers and communities well.",
     body: [
-      "Corn-Soya Blend (CSB), also known in Ethiopia as Faffa-style Super Cereal, is one of the most widely used fortified foods in nutrition programmes. Maize and soya beans are cleaned, roasted or extruded, milled together and fortified with a vitamin and mineral premix.",
+      "Corn-Soya Blend (CSB), also known in Ethiopia as Faffa-style Super Cereal, is one of the most widely used fortified foods in nutrition programmes. Maize and soya beans, bought from local farmers, are cleaned, roasted or extruded, milled together and fortified with a vitamin and mineral premix.",
       "Because the blend is pre-cooked, it prepares quickly into a smooth porridge. We produce to the formulation and packing specification of each buyer, and we share batch documentation with every delivery.",
     ],
     packs: [
@@ -162,6 +164,37 @@ export const products: Product[] = [
     buyers: ["Poultry & dairy farms", "Feedlots & fatteners", "Agro-dealers & cooperatives"],
     art: "feed",
   },
+  {
+    slug: "honey",
+    name: "Natural Honey",
+    shortName: "Honey",
+    category: "Honey",
+    summary: "Pure honey from Nopa’s own honey farm, strained and packed with nothing added.",
+    lead: "Our newest product comes from our own hives. We harvest the honey, strain it, and pack it with nothing added.",
+    body: [
+      "Unlike our other products, honey doesn’t come from outside growers. It comes from Nopa’s own honey farm, where we keep the hives, manage the colonies and harvest the comb ourselves.",
+      "After harvest the honey is strained to remove wax and comb, then filled into clean, sealed containers. Each container carries a batch code that links it to its harvest, like everything else we make.",
+    ],
+    packs: [
+      { size: "Jars", note: "Retail jars for shops & homes" },
+      { size: "Bulk", note: "Larger containers for hotels, bakeries & resale" },
+    ],
+    packLine: "Retail jars & bulk containers",
+    specs: [
+      { label: "Source", value: "Nopa’s own honey farm" },
+      { label: "Processing", value: "Strained; nothing added" },
+      { label: "Appearance", value: "Natural colour, which varies with the season" },
+      { label: "Packaging", value: "Sealed food-grade jars & containers" },
+      { label: "Traceability", value: "Batch-coded to its harvest" },
+    ],
+    uses: [
+      { title: "Households", text: "On bread, in tea, or by the spoon." },
+      { title: "Hotels & cafés", text: "Breakfast tables and kitchens." },
+      { title: "Bakers & food makers", text: "A natural sweetener for baking and recipes." },
+    ],
+    buyers: ["Supermarkets & retail", "Hotels & cafés", "Distributors & wholesalers"],
+    art: "honey",
+  },
 ];
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
@@ -169,6 +202,7 @@ export const getProduct = (slug: string) => products.find((p) => p.slug === slug
 export const nav = [
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
+  { href: "/sourcing", label: "Sourcing" },
   { href: "/quality", label: "Quality" },
   { href: "/partners", label: "Partners" },
   { href: "/contact", label: "Contact" },

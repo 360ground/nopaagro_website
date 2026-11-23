@@ -15,8 +15,8 @@ const tiles = [
 
 const steps = [
   {
-    t: "Source",
-    d: "We buy oilseeds, maize, sorghum and soya from Ethiopian growers and traders. Every load is inspected when it arrives.",
+    t: "Buy from farmers",
+    d: "We buy maize, sorghum, soya and oilseeds from local farmers and cooperatives. Every load is weighed and inspected when it arrives.",
   },
   {
     t: "Clean & process",
@@ -32,11 +32,18 @@ const steps = [
   },
 ];
 
+const sourcing = [
+  { crop: "Maize", into: "Flour · corn-soya blend · animal feed" },
+  { crop: "Sorghum", into: "Flour · animal feed" },
+  { crop: "Soya beans", into: "Corn-soya blend · animal feed" },
+  { crop: "Oilseeds", into: "Cooking oil · oilseed cake for feed" },
+];
+
 const segments = [
   {
     t: "Distributors & retail",
     d: "Steady supply of oil and flour in the pack sizes Ethiopian shoppers buy.",
-    p: "Edible oil · Flour",
+    p: "Edible oil · Flour · Honey",
   },
   {
     t: "Institutions & programmes",
@@ -85,7 +92,7 @@ export default function Home() {
             <div>
               <p className="eyebrow flex items-center gap-3 text-leaf">
                 <span className="h-px w-8 bg-leaf" aria-hidden="true" />
-                Food & feed processing · Gambela, Ethiopia
+                Agro-manufacturing · Gambela, Ethiopia
               </p>
               <h1 className="display mt-8 text-[3.1rem] sm:text-7xl xl:text-[6.4rem]">
                 Processing Ethiopia’s harvest <em className="text-leaf" style={{ fontVariationSettings: '"opsz" 144, "SOFT" 100' }}>with quality and care.</em>
@@ -93,7 +100,7 @@ export default function Home() {
             </div>
             <div className="mt-10 max-w-xl">
               <p className="text-lg leading-relaxed text-ink-soft sm:text-xl">
-                Nopa turns Ethiopian oilseeds, maize, sorghum and soya into refined cooking oil, flour, fortified blended food and animal feed for homes, institutions and farms.
+                Nopa is an Ethiopian agro-manufacturing company. We buy crops from local farmers and manufacture them into cooking oil, flour, fortified food and animal feed. We also produce honey on our own farm.
               </p>
               <div className="mt-9 flex flex-wrap gap-3">
                 <ButtonLink href="/products">Explore our products</ButtonLink>
@@ -113,9 +120,9 @@ export default function Home() {
         <div className="border-y border-line">
           <dl className="container-x grid grid-cols-2 md:grid-cols-4">
             {[
-              ["Product lines", "Four"],
-              ["Cooking oil packs", "1L to 20L"],
-              ["Flour & feed sacks", "25 & 50 kg"],
+              ["What we do", "Agro-manufacturing"],
+              ["Raw materials", "From local farmers"],
+              ["Product lines", "Five, incl. honey"],
               ["Head office", "Gambela, Ethiopia"],
             ].map(([k, v]) => (
               <div
@@ -139,12 +146,12 @@ export default function Home() {
           </p>
           <div className="reveal md:col-span-9">
             <p className="font-display text-3xl leading-[1.18] tracking-tight sm:text-[2.6rem] lg:text-5xl">
-              We are an Ethiopian processing company. We take crops grown in this country and make{" "}
+              We are an agro-manufacturing company. We buy crops from the farmers who grow them and manufacture{" "}
               <span className="text-leaf">food and feed that people can rely on</span>: in the kitchen, in a school feeding programme, or on a poultry farm outside the city.
             </p>
             <div className="mt-12 grid gap-8 border-t border-line pt-8 sm:grid-cols-2">
               <p className="leading-relaxed text-ink-soft">
-                Our work is simple to describe and hard to do well. We clean, refine, mill, blend and pack, and we check every batch along the way. Whether you buy one pallet or a full programme’s supply, you should get the same product every time.
+                Farmers grow the maize, sorghum, soya and oilseeds; we turn them into finished products. We clean, refine, mill, blend and pack, and we check every batch along the way. Whether you buy one pallet or a full programme’s supply, you should get the same product every time.
               </p>
               <div className="flex items-end">
                 <Link href="/about" className="group inline-flex items-center gap-3 text-lg">
@@ -160,8 +167,8 @@ export default function Home() {
       {/* PRODUCTS */}
       <section className="bg-bone py-24 md:py-32">
         <div className="container-x">
-          <SectionHead eyebrow="Our products" title={<>Four product lines. <br className="hidden sm:block" />One standard.</>}>
-            Each product is made on its own line and packed in the sizes our customers use.
+          <SectionHead eyebrow="Our products" title={<>Five product lines. <br className="hidden sm:block" />One standard.</>}>
+            Four are manufactured from farmers’ crops on their own lines. The fifth, honey, comes from our own farm.
           </SectionHead>
 
           <ul className="mt-16 border-t border-ink/80">
@@ -187,6 +194,41 @@ export default function Home() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* SOURCING */}
+      <section className="py-24 md:py-32">
+        <div className="container-x grid gap-14 lg:grid-cols-12 lg:items-center">
+          <div className="lg:col-span-5">
+            <p className="eyebrow flex items-center gap-3 text-leaf">
+              <span className="h-px w-8 bg-leaf" aria-hidden="true" />
+              Sourcing
+            </p>
+            <h2 className="display mt-5 text-4xl sm:text-5xl">Grown by local farmers. Manufactured by Nopa.</h2>
+            <p className="mt-6 text-lg leading-relaxed text-ink-soft">
+              We don’t grow the crops we manufacture. We buy them from smallholder farmers and cooperatives, which gives farmers a steady buyer for their harvest and gives us inputs we know the origin of.
+            </p>
+            <div className="mt-9">
+              <ButtonLink href="/sourcing" variant="outline">
+                How we source
+              </ButtonLink>
+            </div>
+          </div>
+          <div className="lg:col-span-6 lg:col-start-7">
+            <ul className="reveal overflow-hidden rounded-[1.5rem] border border-line bg-bone">
+              {sourcing.map((s) => (
+                <li key={s.crop} className="grid grid-cols-[1fr_auto] items-center gap-4 border-b border-line px-6 py-5 last:border-b-0 sm:grid-cols-[10rem_1fr]">
+                  <span className="font-display text-2xl">{s.crop}</span>
+                  <span className="text-right text-sm text-ink-soft sm:text-left sm:text-base">{s.into}</span>
+                </li>
+              ))}
+              <li className="grid grid-cols-[1fr_auto] items-center gap-4 bg-honey px-6 py-5 sm:grid-cols-[10rem_1fr]">
+                <span className="font-display text-2xl text-forest">Honey</span>
+                <span className="text-right text-sm text-forest sm:text-left sm:text-base">From our own honey farm</span>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
 

@@ -1,0 +1,25 @@
+name: nopa_agro
+
+# The shared Caddy on the server (pdftools stack, ports 80/443) reaches this
+# container as "nopa-agro" on the pdftools_default network; its route lives in
+# /opt/caddy-sites/nopaagro.caddy (copy in docker/nopaagro.caddy).
+# Port 8088 stays open as a direct address until the domain is live.
+
+services:
+  web:
+    build: .
+    image: nopa_agro:latest
+    container_name: nopa_agro
+    restart: unless-stopped
+    ports:
+      - "8088:80"
+    networks:
+      default:
+      shared_proxy:
+        aliases:
+          - nopa-agro
+
+networks:
+  shared_proxy:
+    external: true
+    name: pdftools_default

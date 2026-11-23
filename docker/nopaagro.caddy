@@ -1,0 +1,24 @@
+# Nopa Agro Processing website, served through the shared Caddy on this host
+# (the PDF Tools stack owns ports 80/443).
+# On the server: /opt/caddy-sites/nopaagro.caddy (inside Caddy: /etc/caddy/sites/nopaagro.caddy).
+# The container is reached by the "nopa-agro" alias set in /opt/nopa_agro/docker-compose.yml.
+#
+#   nopaagro.com       the website (container nopa_agro)
+#   www.nopaagro.com   redirects to nopaagro.com
+#
+# Certificates: automatic Let's Encrypt (HTTP challenge), stored in the shared Caddy's data volume.
+# A change here needs:  docker exec pdftools-caddy-1 caddy validate --config /etc/caddy/Caddyfile
+#                  then: docker restart pdftools-caddy-1   (a few seconds' blip for every site on this host)
+
+nopaagro.com {
+	encode zstd gzip
+	header {
+		Strict-Transport-Security "max-age=31536000"
+		-Server
+	}
+	reverse_proxy nopa-agro:80
+}
+
+www.nopaagro.com {
+	redir https://nopaagro.com{uri} permanent
+}

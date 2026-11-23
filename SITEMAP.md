@@ -11,7 +11,11 @@
 │     ├── /products/[product-2]             02  (to be confirmed — not in the brief)
 │     ├── /products/maize-sorghum-flour     03  Maize & Sorghum Flour — 25kg, 50kg sacks
 │     ├── /products/fortified-blended-food  04  Fortified Corn-Soya Blend (CSB / Faffa-style Super Cereal)
-│     └── /products/animal-feed             05  Compound Animal & Poultry Feed
+│     ├── /products/animal-feed             05  Compound Animal & Poultry Feed
+│     └── /products/honey                   06  Natural Honey (from Nopa's own honey farm)
+│
+├── /sourcing                       Sourcing: our farmers & honey farm
+│     · Why we buy from farmers · What we buy (crop → product) · Commitments to farmers · Honey farm · Sell to us
 │
 ├── /quality                        Quality & Food Safety
 │     · Process from intake to dispatch · Lab & batch control · Packaging & traceability

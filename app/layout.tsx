@@ -22,11 +22,11 @@ const instrument = Instrument_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(company.url),
   title: {
-    default: `${company.name} | Edible oil, flour, fortified food & feed`,
+    default: `${company.name} | Agro-manufacturing in Gambela, Ethiopia`,
     template: `%s | ${company.name}`,
   },
   description:
-    "Nopa Agro Processing S.C. is a Gambela-based Ethiopian processor of refined edible oil, maize and sorghum flour, fortified corn-soya blend and compound animal feed.",
+    "Nopa Agro Processing S.C. is an Ethiopian agro-manufacturing company in Gambela. We buy crops from local farmers and manufacture refined edible oil, maize and sorghum flour, fortified corn-soya blend and animal feed, and produce honey on our own farm.",
   openGraph: {
     type: "website",
     siteName: company.name,

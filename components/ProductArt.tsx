@@ -204,6 +204,59 @@ function Feed() {
   );
 }
 
+function Honey() {
+  const hex = (cx: number, cy: number, r: number) =>
+    Array.from({ length: 6 }, (_, i) => {
+      const a = (Math.PI / 3) * i + Math.PI / 6;
+      return `${(cx + r * Math.cos(a)).toFixed(1)},${(cy + r * Math.sin(a)).toFixed(1)}`;
+    }).join(" ");
+  const comb = [
+    [64, 300], [92, 300], [78, 276], [106, 276], [50, 276], [64, 252], [92, 252], [78, 324], [50, 324],
+  ];
+  return (
+    <>
+      <defs>
+        <linearGradient id="honey-fill" x1="0" x2="1">
+          <stop offset="0" stopColor="#b8650c" />
+          <stop offset="0.32" stopColor="#f2b53c" />
+          <stop offset="0.7" stopColor="#e19a22" />
+          <stop offset="1" stopColor="#a85a0a" />
+        </linearGradient>
+      </defs>
+      <Shadow cx={215} rx={150} />
+      {/* honeycomb */}
+      {comb.map(([x, y], i) => (
+        <polygon key={i} points={hex(x, y, 15)} fill={i % 3 === 0 ? "#e8a72e" : "#f3c45c"} stroke="#c9861a" strokeWidth="2" />
+      ))}
+      {/* jar */}
+      <rect x="158" y="112" width="124" height="34" rx="6" fill={C.leafDark} />
+      <path d="M158 124 H282" stroke={C.forest} strokeOpacity="0.4" />
+      <path d="M158 130 H282" stroke={C.forest} strokeOpacity="0.4" />
+      <rect x="166" y="144" width="108" height="12" fill="#e2c890" opacity="0.7" />
+      <path d="M150 168 Q150 154 166 154 H274 Q290 154 290 168 V326 Q290 344 272 344 H168 Q150 344 150 326 Z" fill="url(#honey-fill)" />
+      <rect x="160" y="172" width="9" height="150" rx="4.5" fill="#fff" opacity="0.3" />
+      <rect x="150" y="206" width="140" height="96" fill={C.bone} />
+      <text x="220" y="240" textAnchor="middle" fill={C.leaf} style={{ font: "500 25px var(--font-display)" }}>
+        Nopa
+      </text>
+      <line x1="184" x2="256" y1="252" y2="252" stroke={C.leaf} strokeOpacity="0.35" />
+      <text x="220" y="270" textAnchor="middle" fill={C.forest} style={{ font: "700 11px var(--font-sans)", letterSpacing: "0.16em" }}>
+        PURE HONEY
+      </text>
+      <text x="220" y="288" textAnchor="middle" fill={C.ink} opacity="0.65" style={{ font: "500 8px var(--font-sans)", letterSpacing: "0.14em" }}>
+        FROM OUR OWN FARM
+      </text>
+      {/* dipper */}
+      <g transform="rotate(24 330 250)">
+        <rect x="324" y="150" width="9" height="150" rx="4.5" fill="#b07a42" />
+        <rect x="316" y="276" width="25" height="44" rx="10" fill="#c48a4d" />
+        <path d="M316 286 H341 M316 297 H341 M316 308 H341" stroke="#8a5a2b" strokeWidth="2.5" />
+        <path d="M322 320 q6 14 0 22 q-3 6 2 10" fill="none" stroke="#e7a52b" strokeWidth="5" strokeLinecap="round" />
+      </g>
+    </>
+  );
+}
+
 export default function ProductArt({ kind, className }: { kind: ArtKind; className?: string }) {
   return (
     <svg viewBox="0 0 420 380" className={className} role="img" aria-hidden="true">
@@ -211,6 +264,7 @@ export default function ProductArt({ kind, className }: { kind: ArtKind; classNa
       {kind === "flour" && <Flour />}
       {kind === "csb" && <Csb />}
       {kind === "feed" && <Feed />}
+      {kind === "honey" && <Honey />}
     </svg>
   );
 }

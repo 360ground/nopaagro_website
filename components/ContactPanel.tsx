@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { Suspense, useCallback, useEffect, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import QuoteForm, { field, label } from "./QuoteForm";
 import { ArrowUpRight } from "./Icons";
 import { company } from "@/lib/site";
@@ -14,7 +14,7 @@ const tabs: { id: Tab; label: string; eyebrow: string; title: string; intro: str
     label: "Send a message",
     eyebrow: "Contact form",
     title: "Send us a message.",
-    intro: "Questions about Nopa, our products, partnerships or supplying us with grain and oilseeds. We read every message.",
+    intro: "Questions about Nopa, our products or partnerships. Farmers and cooperatives: tell us what you grow. We read every message.",
   },
   {
     id: "quote",
@@ -78,10 +78,17 @@ export default function ContactPanel() {
   );
 }
 
-const subjects = ["General question", "Product information", "Partnership", "Supplying grain or oilseeds", "Other"];
+const SUPPLY = "Selling us your crops (farmers & cooperatives)";
+const subjects = ["General question", "Product information", "Partnership", SUPPLY, "Other"];
 
 function MessageForm() {
   const [sent, setSent] = useState(false);
+  const subjectRef = useRef<HTMLSelectElement>(null);
+
+  // Farmers arriving from the Sourcing page (?subject=supply) get the right subject preselected.
+  useEffect(() => {
+    if (new URLSearchParams(window.location.search).get("subject") === "supply" && subjectRef.current) subjectRef.current.value = SUPPLY;
+  }, []);
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -130,6 +137,7 @@ function MessageForm() {
           Subject
         </label>
         <select
+          ref={subjectRef}
           id="m-subject"
           name="m-subject"
           defaultValue={subjects[0]}

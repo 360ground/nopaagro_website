@@ -86,7 +86,7 @@ export default function Header() {
                   <div className="overflow-hidden rounded-2xl border border-line bg-bone shadow-[0_24px_60px_-20px_rgb(24_33_26/0.25)]">
                     <ul className="grid grid-cols-2 gap-px bg-line">
                       {products.map((p, i) => (
-                        <li key={p.slug} className="bg-bone">
+                        <li key={p.slug} className={`bg-bone ${i === products.length - 1 && products.length % 2 === 1 ? "col-span-2" : ""}`}>
                           <Link
                             href={`/products/${p.slug}`}
                             onBlur={(e) => {

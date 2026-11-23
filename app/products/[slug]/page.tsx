@@ -24,6 +24,7 @@ const heroTone: Record<string, string> = {
   flour: "bg-paper-2 text-ink",
   csb: "bg-sprout text-forest",
   feed: "bg-maize text-forest",
+  honey: "bg-honey text-forest",
 };
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {

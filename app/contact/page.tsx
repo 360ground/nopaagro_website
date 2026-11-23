@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   description: `Contact ${company.legalName} in Gambela, Ethiopia. Email ${company.email} or send a quote request.`,
 };
 
-const mapQuery = encodeURIComponent("Gambela Square, Gambela, Ethiopia");
+const mapQuery = `${company.geo.lat},${company.geo.lng}`;
 
 export default function ContactPage() {
   return (
@@ -59,6 +59,7 @@ export default function ContactPage() {
           </aside>
 
           <div id="quote" className="scroll-mt-32 lg:col-span-8">
+            <span id="message" className="block scroll-mt-32" aria-hidden="true" />
             <ContactPanel />
           </div>
         </div>
@@ -68,7 +69,7 @@ export default function ContactPage() {
         <div className="overflow-hidden rounded-[2rem] border border-line">
           <iframe
             title="Map showing Gambela, Ethiopia"
-            src={`https://maps.google.com/maps?q=${mapQuery}&z=14&output=embed`}
+            src={`https://maps.google.com/maps?q=${mapQuery}&z=16&output=embed`}
             className="h-[22rem] w-full grayscale-[0.4] md:h-[28rem]"
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"

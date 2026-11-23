@@ -8,7 +8,7 @@ import { company, products } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About us",
   description:
-    "Nopa Agro Processing S.C. is an Ethiopian food and feed processor based in Gambela, making edible oil, flour, fortified blended food and animal feed.",
+    "Nopa Agro Processing S.C. is an Ethiopian agro-manufacturing company in Gambela. We buy crops from local farmers and manufacture edible oil, flour, fortified blended food and animal feed, and produce honey on our own farm.",
 };
 
 const values = [
@@ -29,7 +29,7 @@ export default function AboutPage() {
             Rooted in Ethiopian <em className="text-leaf">agriculture.</em>
           </>
         }
-        intro={`${company.legalName} processes locally grown crops into food and feed for households, institutions and farms across Ethiopia.`}
+        intro={`${company.legalName} is an agro-manufacturing company. We buy crops from local farmers and manufacture them into food and feed for households, institutions and farms across Ethiopia.`}
       />
 
       <section className="container-x py-20 md:py-28">
@@ -51,10 +51,10 @@ export default function AboutPage() {
               <h2 className="display text-4xl sm:text-5xl">Who we are</h2>
               <div className="mt-6 space-y-5 text-lg leading-relaxed text-ink-soft">
                 <p>
-                  Nopa Agro Processing is a share company headquartered in Gambela, the capital of Gambela Region in western Ethiopia, near Gambela Square. We work where farming meets food manufacturing. Oilseeds, maize, sorghum and soya come in from Ethiopian growers and traders, and leave as finished, packed products ready for shops, kitchens, programmes and farms.
+                  Nopa Agro Processing is an agro-manufacturing share company headquartered in Gambela, the capital of Gambela Region in western Ethiopia, near Gambela Square. We sit between the farm and the market. We buy maize, sorghum, soya and oilseeds from smallholder farmers and cooperatives, and manufacture them into finished, packed products ready for shops, kitchens, programmes and farms.
                 </p>
                 <p>
-                  We make four product lines: refined edible cooking oil, maize and sorghum flour, fortified corn-soya blend, and compound animal and poultry feed. They are made on separate lines. The by-products of our oil and milling work, oilseed cake and bran, go into our animal feed.
+                  We make five product lines: refined edible cooking oil, maize and sorghum flour, fortified corn-soya blend, compound animal and poultry feed, and natural honey. The first four are manufactured on separate lines from farmers’ crops, and the by-products of our oil and milling work, oilseed cake and bran, go into our animal feed. Our honey comes from our own honey farm, where we keep the hives ourselves.
                 </p>
               </div>
             </div>
